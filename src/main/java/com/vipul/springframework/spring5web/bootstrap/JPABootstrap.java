@@ -4,6 +4,7 @@ import com.vipul.springframework.spring5web.dataservice.AuthorService;
 import com.vipul.springframework.spring5web.dataservice.BookService;
 import com.vipul.springframework.spring5web.model.Author;
 import com.vipul.springframework.spring5web.model.Book;
+import com.vipul.springframework.spring5web.model.Publisher;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -26,7 +27,8 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
     private void initializeData() {
         Author eric = new Author("Vipul", "popli");
-        Book  ddd = new Book("Domain Driven Design", "1234", "Harper Collins");
+        Publisher publisher = new Publisher("dharma", "mumbai");
+        Book  ddd = new Book("Domain Driven Design", "1234", publisher);
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
 
@@ -36,7 +38,8 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
 
         //Rod
         Author rod = new Author("kanika", "popli");
-        Book noEJB = new Book("J2EE Development without EJB", "23444", "Wrox" );
+        Publisher publisher2 = new Publisher("Akrosh", "Delhi");
+        Book noEJB = new Book("J2EE Development without EJB", "23444", publisher2);
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
 
