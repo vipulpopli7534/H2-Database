@@ -25,7 +25,7 @@ public class JPABootstrap implements ApplicationListener<ContextRefreshedEvent> 
     }
 
     private void initializeData() {
-        Author eric = new Author("vipul", "popli");
+        Author eric = new Author("Vipul", "popli");
         Book  ddd = new Book("Domain Driven Design", "1234", "Harper Collins");
         eric.getBooks().add(ddd);
         ddd.getAuthors().add(eric);
