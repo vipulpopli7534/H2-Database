@@ -12,7 +12,7 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Publisher publisher;
 
     @ManyToMany
