@@ -11,8 +11,15 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long publisherId;
-    private String name;
-    private String address;
+    private    String name;
+    private  String address;
+
+
+
+    public Publisher() {
+    }
+
+
 
     public Publisher(String name, String address) {
         this.name = name;
@@ -38,5 +45,14 @@ public class Publisher {
 
     public String getAddress() {
         return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Publisher{" +
+                "publisherId=" + publisherId +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
